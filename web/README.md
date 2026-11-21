@@ -6,7 +6,7 @@ Tüm veriler **temsili simülasyondur**; eşikler ve tahminler saha testiyle do�
 Görünümler: tesis genel bakış, filtre detayı (`#filtre-f-102`), bildirim merkezi, bakım kayıtları,
 sensör sağlığı, raporlar (cam / kum karşılaştırması), eşik ve bildirim ayarları, sistem mimarisi.
 
-Yayın: GitHub Pages (`main` dalı, `/docs` klasörü) → https://esrainan120-ctrl.github.io/ideathon-ai-app/
+Yayın: GitHub Pages (`main` dalı, `/docs` klasörü) → https://esrainan120-ctrl.github.io/vitrion/
 `docs/index.html`, bu dosyanın yayın kopyasıdır; değişiklikten sonra ikisini de güncelleyin.
 
 QR kodu yeniden üretmek için:

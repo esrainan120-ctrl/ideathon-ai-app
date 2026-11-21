@@ -89,7 +89,7 @@ Demo filtreleri: F-101/102 cam, F-103 referans kum (L1 proses suyu); F-201/202 (
 F-301 (L3 kazan besleme); F-401 (TU-out sensör arızası örneği)/402 (L4 atıksu geri kazanım).
 
 ## Yayın linkleri
-- GitHub Pages: https://esrainan120-ctrl.github.io/ideathon-ai-app/ (Settings → Pages → main, /docs)
+- GitHub Pages: https://esrainan120-ctrl.github.io/vitrion/ (Settings → Pages → main, /docs). Depo adı `ideathon-ai-app` → `vitrion` olarak değiştirildi; eski Pages adresi yönlenmez.
 - claude.ai artifact (sahibine özel, Share ile açılır): https://claude.ai/artifact/XxcZ6TpgyNu9WrWv3e3Xak
 
 ## Bulut ortamı
