@@ -53,12 +53,12 @@ main{min-width:0;display:flex;flex-direction:column}
 .topbar h1{font:600 18px/1.2 var(--body);letter-spacing:-.01em;margin:0;color:var(--prussian);text-wrap:balance}
 .topbar .meta{display:flex;flex-wrap:wrap;gap:6px 22px;color:var(--muted);font-size:12.5px;margin-left:auto;align-items:center}
 .clock{font:500 13px var(--mono);color:var(--ink);padding-left:22px;border-left:1px solid var(--line)}
-.live{display:inline-flex;align-items:center;gap:7px;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ok)}
-.live::before{content:"";width:7px;height:7px;background:var(--ok);animation:blink 2s steps(1) infinite}
+.live{display:inline-flex;align-items:center;gap:7px;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+.live::before{content:"";width:7px;height:7px;background:var(--teal);animation:blink 2s steps(1) infinite}
 @keyframes blink{50%{opacity:.25}}
 .paused .live{color:var(--muted)} .paused .live::before{background:var(--muted);animation:none}
 .demo-note{display:flex;gap:12px;align-items:center;color:var(--muted);font-size:12px;padding:8px 32px;border-bottom:1px solid var(--line);background:var(--soft)}
-.demo-note b{font:600 10.5px var(--mono);letter-spacing:.12em;color:var(--warn);border:1px solid var(--warn);padding:2px 6px;border-radius:var(--r);white-space:nowrap}
+.demo-note b{font:600 10.5px var(--mono);letter-spacing:.12em;color:var(--prussian);border:1px solid var(--prussian);padding:2px 6px;border-radius:var(--r);white-space:nowrap}
 
 /* Genel düzen ve tipografi */
 .view{padding:28px 32px 56px;display:flex;flex-direction:column;gap:28px}
@@ -75,7 +75,7 @@ h3{font:500 10.5px/1.3 var(--mono);margin:0;color:var(--muted);text-transform:up
 .kpi .v{font:300 34px/1 var(--body);letter-spacing:-.02em;color:var(--prussian)}
 .kpi .v small{font:500 12px var(--mono);color:var(--muted);margin-left:4px;letter-spacing:0}
 .kpi .l{font:500 10.5px/1.35 var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
-.kpi.alarm .v{color:var(--alarm)} .kpi.warn .v{color:var(--warn)} .kpi.green .v{color:var(--mughal)}
+.kpi.alarm .v{color:var(--alarm)} .kpi.warn .v{color:var(--warn)}
 .kpi.alarm::before,.kpi.warn::before{content:"";position:absolute;left:0;top:0;right:0;height:2px;background:currentColor}
 .kpi.alarm{color:var(--alarm)} .kpi.warn{color:var(--warn)}
 
@@ -88,15 +88,11 @@ h3{font:500 10.5px/1.3 var(--mono);margin:0;color:var(--muted);text-transform:up
 
 /* Filtre kartları */
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(270px,100%),1fr));gap:12px}
-.fcard{display:grid;grid-template-columns:30px 1fr;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;text-decoration:none;color:inherit;position:relative;transition:border-color .15s}
+.fcard{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;text-decoration:none;color:inherit;position:relative;transition:border-color .15s}
 .fcard::before{content:"";position:absolute;left:-1px;right:-1px;top:-1px;height:2px;background:transparent}
-.fcard.s-uyari::before{background:var(--warn)} .fcard.s-alarm::before{background:var(--alarm)} .fcard.s-bakim::before{background:var(--teal)} .fcard.s-sensor::before{background:var(--sensor)}
+.fcard.s-alarm::before{background:var(--alarm)}
 .fcard:hover{border-color:var(--teal)}
-.column{width:30px;height:120px;display:block}
-.column .wl{stroke:var(--teal);stroke-width:1;opacity:.55}
-.column.bw .wl{animation:flow 1s linear infinite;stroke-dasharray:3 3}
-@keyframes flow{to{stroke-dashoffset:-6}}
-@media (prefers-reduced-motion:reduce){.column.bw .wl,.live::before{animation:none}.fcard{transition:none}}
+@media (prefers-reduced-motion:reduce){.live::before{animation:none}.fcard{transition:none}}
 .fbody{display:flex;flex-direction:column;gap:10px;min-width:0}
 .ftop{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
 .fid{font:600 15px/1.2 var(--mono);color:var(--prussian);letter-spacing:.02em}
@@ -105,14 +101,14 @@ h3{font:500 10.5px/1.3 var(--mono);margin:0;color:var(--muted);text-transform:up
 /* Durum işaretleri: kare + büyük harf, zemin yok */
 .pill{display:inline-flex;align-items:center;gap:6px;font:600 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;padding:4px 0}
 .pill::before{content:"";width:7px;height:7px;background:currentColor;flex:none}
-.p-normal{color:var(--ok)} .p-uyari{color:var(--warn)} .p-alarm{color:var(--alarm)} .p-bakim{color:var(--info)} .p-sensor{color:var(--sensor)} .p-ongoru{color:var(--info)}
+.p-normal{color:var(--muted)} .p-uyari{color:var(--warn)} .p-alarm{color:var(--alarm)} .p-bakim{color:var(--prussian)} .p-sensor{color:var(--muted)} .p-ongoru{color:var(--teal)}
 .p-ongoru::before{background:transparent;border:1.5px solid currentColor;width:7px;height:7px;box-sizing:border-box}
 
 .clog{display:flex;flex-direction:column;gap:5px}
 .clog-row{display:flex;justify-content:space-between;font:500 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .clog-row b{font:600 13px var(--mono);letter-spacing:0;color:var(--ink)}
 .bar{height:4px;background:var(--line-2);position:relative}
-.bar i{position:absolute;inset:0 auto 0 0;background:var(--ok)}
+.bar i{position:absolute;inset:0 auto 0 0;background:var(--prussian)}
 .bar.uyari i{background:var(--warn)} .bar.alarm i{background:var(--alarm)}
 .bar .tick{position:absolute;top:-3px;bottom:-3px;width:1px;background:var(--ink);opacity:.55}
 .vals{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
@@ -428,10 +424,10 @@ function spark(f, w=200, h=34){
   const x = i => i/(pts.length-1)*w, y = v => h - v/max*h;
   let d='', area='', on=false, last=null;
   pts.forEach((p,i)=>{ if(p.dpn==null){on=false;return;} d+=(on?'L':'M')+x(i).toFixed(1)+' '+y(p.dpn).toFixed(1); on=true; last=[x(i),y(p.dpn)]; });
-  const col = {alarm:'var(--alarm)',uyari:'var(--warn)'}[f.level] || 'var(--teal)';
+  const col = f.level==='alarm' ? 'var(--alarm)' : 'var(--prussian)';
   return `<svg viewBox="0 0 ${w} ${h}" width="100%" height="${h}" preserveAspectRatio="none" aria-hidden="true">
-    <line x1="0" x2="${w}" y1="${y(f.warn)}" y2="${y(f.warn)}" stroke="var(--warn)" stroke-dasharray="3 3" opacity=".6"/>
-    <line x1="0" x2="${w}" y1="${y(f.alarm)}" y2="${y(f.alarm)}" stroke="var(--alarm)" stroke-dasharray="3 3" opacity=".6"/>
+    <line x1="0" x2="${w}" y1="${y(f.warn)}" y2="${y(f.warn)}" stroke="var(--muted)" stroke-dasharray="3 3" opacity=".45"/>
+    <line x1="0" x2="${w}" y1="${y(f.alarm)}" y2="${y(f.alarm)}" stroke="var(--alarm)" stroke-dasharray="3 3" opacity=".45"/>
     <path d="${d}" fill="none" stroke="${col}" stroke-width="1.25" vector-effect="non-scaling-stroke"/>
     ${last?`<circle cx="${last[0]}" cy="${last[1]}" r="2.6" fill="${col}"/>`:''}</svg>`;
 }
@@ -597,23 +593,11 @@ vitrion/{tesis}/cihaz/{esp32_id}/saglik
 }
 };
 
-function column(f,pct){
-  // Filtre kesiti: dış hat, su bölgesi, cam yatak (logodaki damla gibi yatay çizgiler) ve üstte biriken tabaka
-  const top=36, bot=114, cake=f.mode==='bw'?0:Math.min(1.15,pct/100)*20;
-  let bed=''; for(let y=top+4;y<=bot-3;y+=4) bed+=`<line x1="5" x2="25" y1="${y}" y2="${y}" stroke="var(--prussian)" stroke-width="1" opacity="${y<top+cake?0:.38}"/>`;
-  let wl=''; for(let y=10;y<top-2;y+=6) wl+=`<line class="wl" x1="6" x2="24" y1="${y}" y2="${y}"/>`;
-  return `<svg class="column${f.mode==='bw'?' bw':''}" viewBox="0 0 30 120" aria-hidden="true">
-    ${wl}${cake>0?`<rect x="3" y="${top}" width="24" height="${cake}" fill="var(--deposit)" opacity=".75"/>`:''}${bed}
-    <line x1="3" x2="27" y1="${top}" y2="${top}" stroke="var(--prussian)" stroke-width="1" stroke-dasharray="2 2"/>
-    <rect x="1.5" y="2.5" width="27" height="115" rx="2" fill="none" stroke="var(--prussian)" stroke-width="1.5"/>
-    <line x1="15" x2="15" y1="0" y2="2.5" stroke="var(--prussian)" stroke-width="1.5"/></svg>`;
-}
 function card(f){
   const h = latest(f), st = statusOf(f), pct = f.mode==='bw'? 0 : clogPct(f,h.dpn), fc = f.mode==='run'?forecast(f):null;
   const cls = f.level==='alarm'?'alarm':f.level==='uyari'?'uyari':'';
   const wPct = (f.warn-f.d0)/(f.alarm-f.d0)*100;
   return `<a class="fcard s-${st}" href="#filtre-${f.id.toLowerCase()}">
-    ${column(f,pct)}
     <div class="fbody">
       <div class="ftop"><div><div class="fid">${f.id}</div><div class="fname">${f.media==='sand'?'Referans · kuvars kum':'Cam granül · '+fmt(f.kg/1000,2)+' t'}</div></div><span class="pill p-${st}">${levelName(st)}</span></div>
       <div class="clog"><div class="clog-row"><span>Tıkanma</span><b>%${fmt(Math.min(pct,130),0)}</b></div>
@@ -647,7 +631,7 @@ function detail(id){
   </div>
   <div class="panel"><div class="panel-head"><h2>Debiye göre düzeltilmiş ΔP · son 12 saat</h2>
     <div class="legend"><span><i style="background:var(--teal)"></i>ΔP (düz.)</span><span><i style="background:var(--prussian)"></i>Tahmin</span><span><i style="background:var(--info-bg);height:10px"></i>Geri yıkama</span></div></div>
-    <div class="chart">${chart({series:[{pts,key:'dpn',c:'var(--teal)',area:true}],ymax,thresholds:[{v:f.warn,c:'var(--warn)',l:'Uyarı '+fmt(f.warn)},{v:f.alarm,c:'var(--alarm)',l:'Alarm '+fmt(f.alarm)}],proj,bands})}</div>
+    <div class="chart">${chart({series:[{pts,key:'dpn',c:'var(--teal)',area:true}],ymax,thresholds:[{v:f.warn,c:'var(--muted)',l:'Uyarı '+fmt(f.warn)},{v:f.alarm,c:'var(--alarm)',l:'Alarm '+fmt(f.alarm)}],proj,bands})}</div>
     <div class="forecast">
       <div><h3>Uyarı eşiğine</h3><div class="big">${fc?dur(fc.toWarn):'—'}</div></div>
       <div><h3>Alarm eşiğine</h3><div class="big">${f.level==='alarm'?'Aşıldı':fc?dur(fc.toAlarm):'—'}</div></div>
@@ -656,8 +640,8 @@ function detail(id){
     </div>
     <p class="callout">Doğrusal regresyon, son geri yıkamadan sonraki en fazla 120 dakikalık ölçüme uygulanır. Doğrulanmış bir kalan ömür hesabı değildir; tahminler gerçek bakım olaylarıyla karşılaştırılarak güncellenecektir.</p></div>
   <div class="grid-2" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr)">
-  <div class="panel"><div class="panel-head"><h2>Bulanıklık · giriş ve çıkış</h2><div class="legend"><span><i style="background:var(--warn)"></i>Giriş</span><span><i style="background:var(--mughal)"></i>Çıkış</span></div></div>
-    <div class="chart">${chart({series:[{pts,key:'ti',c:'var(--warn)'},{pts,key:'to',c:'var(--mughal)',area:true}],ymax:nmax,W:560,h:240})}</div></div>
+  <div class="panel"><div class="panel-head"><h2>Bulanıklık · giriş ve çıkış</h2><div class="legend"><span><i style="background:var(--muted)"></i>Giriş</span><span><i style="background:var(--teal)"></i>Çıkış</span></div></div>
+    <div class="chart">${chart({series:[{pts,key:'ti',c:'var(--muted)'},{pts,key:'to',c:'var(--teal)',area:true}],ymax:nmax,W:560,h:240})}</div></div>
   <div class="panel"><div class="panel-head"><h2>Bu filtrenin bildirimleri</h2><a class="btn ghost sm" href="#bildirimler">Bildirim merkezi</a></div>
     <div class="feed">${myAlerts.map(a=>`<div class="feed-item"><span class="pill p-${a.level}">${levelName(a.level)}</span><span class="t">${hhmm(tAt(a.m))} · ${a.state}</span><div class="msg">${a.msg}</div></div>`).join('')||'<p class="muted">Son 12 saatte bildirim yok.</p>'}</div></div>
   </div>`;
